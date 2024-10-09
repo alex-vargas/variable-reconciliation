@@ -1,0 +1,10 @@
+template: Hello, %s!
+defaultName: Stranger
+ontologySource: ontologies/VariableReconciliationOntology.owl
+iriPrefix: https://purl.org/variablereconciliationontology
+equivalentClass: Equivalencies
+ontologySavePath: /var/data/ontologies/data-reconciliation/
+
+swagger:
+  resourcePackage: utep.ilink.dropwizardtemplate.resources
+  enabled: false

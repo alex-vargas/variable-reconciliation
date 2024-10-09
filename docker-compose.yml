@@ -1,0 +1,9 @@
+version: '3.8'
+services:
+  dropwizard-template: 
+    container_name: dropwizard-template
+    image: lagarnicachavira/dropwizard-template:latest
+    restart: always
+    ports:
+      # <host port> : <application port>
+      - '8090:8080'

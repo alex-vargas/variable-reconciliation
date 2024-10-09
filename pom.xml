@@ -1,0 +1,216 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <!-- Compatible with Maven 3 -->
+    <modelVersion>4.0.0</modelVersion>
+
+    <artifactId>dropwizard-template</artifactId>
+    <version>1.0.0</version>
+    <groupId>utep.ilink.dropwizardtemplate</groupId>
+    <name>Dropwizard Template</name>
+    <packaging>jar</packaging>
+
+
+    <properties>
+        <junit.jupiter.version>5.10.0</junit.jupiter.version>
+        <dropwizard.version>2.0.25</dropwizard.version>
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+        <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
+        <maven.compiler.source>1.8</maven.compiler.source>
+        <maven.compiler.target>1.8</maven.compiler.target>
+    </properties>
+
+    <repositories>
+        <repository>
+            <id>berkeley-repo</id>
+            <name>Berkeley Repo for parsing DL query into OWLClassExpression </name>
+            <url>https://code.berkeleybop.org/maven/repository</url>
+        </repository>
+        <repository>
+            <id>pellet-repo</id>
+            <name>Pellet Repo for creating a reasoner instance </name>
+            <url>https://maven.aksw.org/repository/internal</url>
+        </repository>
+
+    </repositories>
+
+    <dependencies>
+        <!--Adding
+        OWL API to populate ontology-->
+        <!-- https://mvnrepository.com/artifact/net.sourceforge.owlapi/owlapi-distribution -->
+        <dependency>
+            <groupId>net.sourceforge.owlapi</groupId>
+            <artifactId>owlapi-distribution</artifactId>
+            <version>5.1.20</version>
+        </dependency>
+
+        <!-- https://mvnrepository.com/artifact/owlapi/owlapi -->
+        <!-- <dependency>
+            <groupId>owlapi</groupId>
+            <artifactId>owlapi</artifactId>
+            <version>3.2.4</version>
+        </dependency> -->
+
+        <!-- Reasoner -->
+        <dependency>
+            <groupId>net.sourceforge.owlapi</groupId>
+            <artifactId>org.semanticweb.hermit</artifactId>
+            <version>1.4.5.519</version>
+        </dependency>
+        <!-- https://mvnrepository.com/artifact/net.sourceforge.owlapi/pellet-owlapi-ignazio1977 -->
+        <!-- <dependency>
+            <groupId>net.sourceforge.owlapi</groupId>
+            <artifactId>pellet-owlapi-ignazio1977</artifactId>
+            <version>2.4.0-ignazio1977</version>
+        </dependency> -->
+
+        <!-- https://mvnrepository.com/artifact/com.clarkparsia.pellet/pellet-owlapiv3 -->
+        <!-- <dependency>
+            <groupId>com.clarkparsia.pellet</groupId>
+            <artifactId>pellet-owlapiv3</artifactId>
+            <version>2.3.3</version>
+        </dependency> -->
+
+
+        <!-- Perform DL Queries -->
+        <!-- https://mvnrepository.com/artifact/org.coode/parsers -->
+        <!-- <dependency>
+            <groupId>org.coode</groupId>
+            <artifactId>parsers</artifactId>
+            <version>1.5.2</version>
+        </dependency> -->
+
+
+        <!-- https://mvnrepository.com/artifact/com.fasterxml.jackson.core/jackson-core -->
+        <dependency>
+            <groupId>com.fasterxml.jackson.core</groupId>
+            <artifactId>jackson-core</artifactId>
+            <version>2.14.2</version>
+        </dependency>
+
+        <dependency>
+            <groupId>io.dropwizard</groupId>
+            <artifactId>dropwizard-core</artifactId>
+            <version>${dropwizard.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>io.dropwizard</groupId>
+            <artifactId>dropwizard-client</artifactId>
+            <version>${dropwizard.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>io.dropwizard</groupId>
+            <artifactId>dropwizard-auth</artifactId>
+            <version>${dropwizard.version}</version>
+        </dependency>
+        <!-- Swagger support -->
+        <dependency>
+            <groupId>com.smoketurner</groupId>
+            <artifactId>dropwizard-swagger</artifactId>
+            <version>2.0.0-1</version>
+            <exclusions>
+                <exclusion>
+                    <groupId>org.reflections</groupId>
+                    <artifactId>reflections</artifactId>
+                </exclusion>
+            </exclusions>
+        </dependency>
+        <!-- https://mvnrepository.com/artifact/org.reflections/reflections -->
+        <dependency>
+            <groupId>org.reflections</groupId>
+            <artifactId>reflections</artifactId>
+            <version>0.10.2</version>
+        </dependency>
+
+        <!-- JUnit5 -->
+        <dependency>
+            <groupId>org.junit.jupiter</groupId>
+            <artifactId>junit-jupiter-api</artifactId>
+            <version>${junit.jupiter.version}</version>
+            <scope>test</scope>
+        </dependency>
+        <dependency>
+            <groupId>org.junit.jupiter</groupId>
+            <artifactId>junit-jupiter-engine</artifactId>
+            <version>${junit.jupiter.version}</version>
+            <scope>test</scope>
+        </dependency>
+        <!-- https://mvnrepository.com/artifact/io.dropwizard/dropwizard-testing -->
+        <dependency>
+            <groupId>io.dropwizard</groupId>
+            <artifactId>dropwizard-testing</artifactId>
+            <version>${dropwizard.version}</version>
+            <scope>test</scope>
+        </dependency>
+        <!-- https://mvnrepository.com/artifact/junit/junit -->
+        <dependency>
+            <groupId>junit</groupId>
+            <artifactId>junit</artifactId>
+            <version>4.13.2</version>
+            <scope>test</scope>
+        </dependency>
+
+    </dependencies>
+    <build>
+        <plugins>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-javadoc-plugin</artifactId>
+                <executions>
+                    <execution>
+                        <id>attach-javadocs</id>
+                        <goals>
+                            <goal>jar</goal>
+                        </goals>
+                    </execution>
+                </executions>
+            </plugin>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-jar-plugin</artifactId>
+                <version>3.2.0</version>
+                <configuration>
+                    <archive>
+                        <index>true</index>
+                        <manifest>
+                            <addClasspath>true</addClasspath>
+                            <mainClass>utep.ilink.dropwizardtemplate.DropwizardTemplateApplication</mainClass>
+                        </manifest>
+                    </archive>
+                </configuration>
+            </plugin>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-shade-plugin</artifactId>
+                <version>3.2.4</version>
+                <configuration>
+                    <createDependencyReducedPom>true</createDependencyReducedPom>
+                    <filters>
+                        <filter>
+                            <artifact>*:*</artifact>
+                            <excludes>
+                                <exclude>module-info.class</exclude>
+                                <exclude>META-INF/*.SF</exclude>
+                                <exclude>META-INF/*.DSA</exclude>
+                                <exclude>META-INF/*.RSA</exclude>
+                            </excludes>
+                        </filter>
+                    </filters>
+                </configuration>
+                <executions>
+                    <execution>
+                        <goals>
+                            <goal>shade</goal>
+                        </goals>
+                    </execution>
+                </executions>
+            </plugin>
+
+            <plugin>
+                <artifactId>maven-surefire-plugin</artifactId>
+                <version>2.22.1</version>
+            </plugin>
+        </plugins>
+    </build>
+
+</project>

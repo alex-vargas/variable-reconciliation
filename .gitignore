@@ -1,0 +1,6 @@
+# Target build files
+/target
+/target/*
+
+# IDE files
+/.vscode
