@@ -1,0 +1,55 @@
+{
+    "inputs": [
+        {
+            "id": "data1",
+            "type": "WaterFlow",
+            "assumptions": {
+                "isNaturalFlow": "true"
+            }
+        },
+        {
+            "id": "data2",
+            "type": "WaterFlow",
+            "assumptions": {
+                "isRealFlow": "false"
+            }
+        },
+        {
+            "id": "data3",
+            "type": "WaterFlow",
+            "assumptions": {
+                "isRealFlow": "false"
+            }
+        },
+        {
+            "id": "data4",
+            "type": "WaterFlow",
+            "assumptions": {
+                "isNaturalFlow": "false",
+                "hasLocation": "SanMarcial"
+            }
+        },
+        {
+            "id": "data5",
+            "type": "WaterFlow",
+            "assumptions": {
+                "isNaturalFlow": "false",
+                "hasLocation": "FortQuitman"
+            }
+        },
+        {
+            "id": "data6",
+            "type": "WaterFlow"
+        }
+    ],
+    "outputs": [
+        {
+            "id": "e1",
+            "type": "WaterPrice"
+        },
+        {
+            "id": "e2",
+            "type": "AvocadoPrice"
+        }
+    ]
+}

@@ -1,0 +1,14 @@
+{
+    "inputs": [
+        {
+            "id": "VIC-StreamFlow",
+            "type": "WaterFlow",
+            "_comment":"Data provided by thirdparty",
+            "assumptions": {
+                "isNaturalFlow": "true"
+            }
+        }
+    ],
+    "outputs": [
+    ]
+}

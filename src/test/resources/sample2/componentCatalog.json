@@ -1,0 +1,83 @@
+{
+    "context": "Context goes here, mainly for using generic vocab as prefix",
+    "transformations": [],
+    "models": [
+        {
+            "id": "p1",
+            "inputs": [
+                {
+                    "id": "e1p1",
+                    "type": "WaterFlow",
+                    "_comment":"San Marcial",
+                    "assumptions": {
+                        "isNaturalFlow": "false",
+                        "hasLatitude": "33.68721",
+                        "hasLongitude": "-106.98254"
+                    }
+                },
+                {
+                    "id": "e2p1",
+                    "type": "Temperature"
+                },
+                {
+                    "id": "e3p1",
+                    "type": "AtmosphericPressure"
+                }
+            ],
+            "outputs": [
+                {
+                    "id": "e6p1",
+                    "type": "WaterPrice"
+                },
+                {
+                    "id": "e7p1",
+                    "type": "RunOff"
+                }
+            ],
+            "computationInfo": {
+                "method": "POST",
+                "contentType": "Content-Type: application/json",
+                "url": "http://p1-endpoint-url.com"
+            }
+        },
+        {
+            "id": "p2",
+            "inputs": [
+                {
+                    "id": "e1p2",
+                    "type": "WaterFlow",
+                    "_comment":"San Marcial",
+                    "assumptions": {
+                        "isNaturalFlow": "false",
+                        "hasLatitude": "33.68831",
+                        "hasLongitude": "-106.98644"
+                    }
+                },
+                {
+                    "id": "e2p2",
+                    "type": "RunOff"
+                },{
+                    "id": "e3p2",
+                    "type":"abstract",
+                    "_comment":"San Marcial",
+                    "assumptions": {
+                        "abstractRange": "124.22",
+                        "hasLatitude": "33.68820",
+                        "hasLongitude": "-106.98013"
+                    }
+                }
+            ],
+            "outputs": [
+                {
+                    "id": "e4p2",
+                    "type": "AvocadoPrice"
+                }
+            ],
+            "computationInfo": {
+                "method": "POST",
+                "contentType": "Content-Type: application/json",
+                "url": "http://p2-endpoint-url.com"
+            }
+        }
+    ]
+}

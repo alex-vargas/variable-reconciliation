@@ -1,0 +1,39 @@
+{
+    "inputs": [
+        {
+            "id": "cf429f9ca7d94e2eec779c16c8c760446f4f80106119107f23b23c7ab32d68dd",
+            "type": "WaterStreamflow",
+            "assumptions": {
+                "isNaturalFlow": "true"
+            }
+        },
+        {
+            "id": "160553d63c1cd5de0990df3768f4d7354d3eab36f8b3ff06e9841a0b9125cb11",
+            "type": "ClimateHydrologyProjections"
+        }
+    ],
+    "outputs": [
+        {
+            "id": "a19cda5f7fd6bfe1457d22e7e623312617f208c9bcf79839f48e9d0568feebb6",
+            "type": "WaterStocks"
+        },
+        {
+            "id": "45845dbfddacaee97a7af3df2fe0da4750b028b11ead33a972e32d255d237fe5",
+            "type": "ReleaseProjection",
+            "_comment":"Elephant Butte",
+            "assumptions": {
+                "hasLatitude": "33.22706",
+                "hasLongitude": "-107.20169"
+            }
+        },
+        {
+            "id": "450f1db5a1b383930360f11667250dd0a2d8730a2565026e2e4f34393f449571",
+            "type": "ReleaseProjection",
+            "_comment":"Caballo Reservoir",
+            "assumptions": {
+                "hasLatitude": "32.90589",
+                "hasLongitude": "-107.28992"
+            }
+        }
+    ]
+}

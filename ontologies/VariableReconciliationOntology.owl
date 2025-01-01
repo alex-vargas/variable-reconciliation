@@ -1,0 +1,590 @@
+<?xml version="1.0"?>
+<rdf:RDF xmlns="https://purl.org/variablereconciliationontology"
+     xml:base="https://purl.org/variablereconciliationontology"
+     xmlns:dc="http://purl.org/dc/elements/1.1/"
+     xmlns:ns="http://creativecommons.org/ns#"
+     xmlns:owl="http://www.w3.org/2002/07/owl#"
+     xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+     xmlns:xml="http://www.w3.org/XML/1998/namespace"
+     xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+     xmlns:vann="http://purl.org/vocab/vann/"
+     xmlns:terms="http://purl.org/dc/terms/"
+     xmlns:protege="http://protege.stanford.edu/plugins/owl/protege#"
+     xmlns:resource="http://semanticscience.org/resource/"
+     xmlns:oboe-core="http://ecoinformatics.org/oboe/oboe.1.2/oboe-core.owl#"
+     xmlns:oboe-characteristics="http://ecoinformatics.org/oboe/oboe.1.2/oboe-characteristics.owl#"
+     xmlns:variablereconciliationontology="https://purl.org/variablereconciliationontology#">
+    <owl:Ontology rdf:about="https://purl.org/variablereconciliationontology">
+        <owl:imports rdf:resource="http://ecoinformatics.org/oboe/oboe.1.2/oboe.owl"/>
+        <owl:imports rdf:resource="http://ontology.cybershare.utep.edu/ELSEWeb/elseweb-data.owl"/>
+        <ns:license>https://creativecommons.org/licenses/by-nc-nd/4.0/</ns:license>
+        <dc:creator>Raul Alejandro Vargas Acosta (https://github.com/alex-vargas)</dc:creator>
+        <dc:description>The Variable Reconciliation Ontology (VaR-O) is designed to capture scientific variables and identify those that are semantically equivalent given their type and scientific assumptions.</dc:description>
+        <dc:rights>Free to share, non-commercial use, no derivatives</dc:rights>
+        <dc:title>Variable Reconciliation Ontology (VaR-O)</dc:title>
+        <terms:modified>2024-04-17</terms:modified>
+        <owl:versionInfo rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">1.0</owl:versionInfo>
+    </owl:Ontology>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Object Properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- https://purl.org/variablereconciliationontology#equivalencies -->
+
+    <owl:ObjectProperty rdf:about="https://purl.org/variablereconciliationontology#equivalencies"/>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Data properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- https://purl.org/variablereconciliationontology#NaturalFlow -->
+
+    <owl:DatatypeProperty rdf:about="https://purl.org/variablereconciliationontology#NaturalFlow"/>
+    
+
+
+    <!-- https://purl.org/variablereconciliationontology#RealFlow -->
+
+    <owl:DatatypeProperty rdf:about="https://purl.org/variablereconciliationontology#RealFlow"/>
+    
+
+
+    <!-- https://purl.org/variablereconciliationontology#Scientific-Assumptions -->
+
+    <owl:DatatypeProperty rdf:about="https://purl.org/variablereconciliationontology#Scientific-Assumptions">
+        <rdfs:domain rdf:resource="https://purl.org/variablereconciliationontology#ScientificVariable"/>
+        <rdfs:comment>This class is the parent class of properties that can describe scientific assumptions.</rdfs:comment>
+        <rdfs:label>Scientific-Assumptions</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- https://purl.org/variablereconciliationontology#abstractRange -->
+
+    <owl:DatatypeProperty rdf:about="https://purl.org/variablereconciliationontology#abstractRange">
+        <rdfs:subPropertyOf rdf:resource="https://purl.org/variablereconciliationontology#Scientific-Assumptions"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#double"/>
+        <rdfs:comment>This property describes a scientific assumption that comprehends a range given in continous data.</rdfs:comment>
+        <rdfs:label>abstractRange</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- https://purl.org/variablereconciliationontology#hasLatitude -->
+
+    <owl:DatatypeProperty rdf:about="https://purl.org/variablereconciliationontology#hasLatitude">
+        <rdfs:subPropertyOf rdf:resource="https://purl.org/variablereconciliationontology#Scientific-Assumptions"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#double"/>
+        <rdfs:comment>This class describes a scientific assumption that represents latitude given in continous data.</rdfs:comment>
+        <rdfs:label>hasLatitude</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- https://purl.org/variablereconciliationontology#hasLongitude -->
+
+    <owl:DatatypeProperty rdf:about="https://purl.org/variablereconciliationontology#hasLongitude">
+        <rdfs:subPropertyOf rdf:resource="https://purl.org/variablereconciliationontology#Scientific-Assumptions"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#double"/>
+        <rdfs:comment>This class describes a scientific assumption that represents longitude given in continous data.</rdfs:comment>
+        <rdfs:label>hasLongitude</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- https://purl.org/variablereconciliationontology#isNaturalFlow -->
+
+    <owl:DatatypeProperty rdf:about="https://purl.org/variablereconciliationontology#isNaturalFlow">
+        <rdfs:subPropertyOf rdf:resource="https://purl.org/variablereconciliationontology#Scientific-Assumptions"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <rdfs:comment>This class describes a scientific assumption that represents natural flow of some property (e.g., water)</rdfs:comment>
+        <rdfs:label>isNaturalFlow</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- https://purl.org/variablereconciliationontology#isRealFlow -->
+
+    <owl:DatatypeProperty rdf:about="https://purl.org/variablereconciliationontology#isRealFlow">
+        <rdfs:subPropertyOf rdf:resource="https://purl.org/variablereconciliationontology#Scientific-Assumptions"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <rdfs:comment>This class describes a scientific assumption that represents the real flow of some property (e.g., water)</rdfs:comment>
+        <rdfs:label>isRealFlow</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- https://purl.org/variablereconciliationontology#other -->
+
+    <owl:DatatypeProperty rdf:about="https://purl.org/variablereconciliationontology#other"/>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Classes
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://ecoinformatics.org/oboe/oboe.1.2/oboe-characteristics.owl#AmountOfSubstanceConcentration -->
+
+    <owl:Class rdf:about="http://ecoinformatics.org/oboe/oboe.1.2/oboe-characteristics.owl#AmountOfSubstanceConcentration"/>
+    
+
+
+    <!-- http://ecoinformatics.org/oboe/oboe.1.2/oboe-characteristics.owl#Temperature -->
+
+    <owl:Class rdf:about="http://ecoinformatics.org/oboe/oboe.1.2/oboe-characteristics.owl#Temperature"/>
+    
+
+
+    <!-- http://ecoinformatics.org/oboe/oboe.1.2/oboe-core.owl#Entity -->
+
+    <owl:Class rdf:about="http://ecoinformatics.org/oboe/oboe.1.2/oboe-core.owl#Entity"/>
+    
+
+
+    <!-- http://ecoinformatics.org/oboe/oboe.1.2/oboe-core.owl#MeasuredCharacteristic -->
+
+    <owl:Class rdf:about="http://ecoinformatics.org/oboe/oboe.1.2/oboe-core.owl#MeasuredCharacteristic">
+        <owl:equivalentClass rdf:resource="https://purl.org/variablereconciliationontology#ScientificVariable"/>
+    </owl:Class>
+    
+
+
+    <!-- https://purl.org/variablereconciliationontology#Abstract -->
+
+    <owl:Class rdf:about="https://purl.org/variablereconciliationontology#Abstract">
+        <rdfs:subClassOf rdf:resource="https://purl.org/variablereconciliationontology#ScientificVariable"/>
+        <rdfs:comment>This class formalizes an example of a classification of a scientific variable. It is used to show how variables can be classified.</rdfs:comment>
+        <rdfs:label>Abstract</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://purl.org/variablereconciliationontology#Caballo_Reservoir -->
+
+    <owl:Class rdf:about="https://purl.org/variablereconciliationontology#Caballo_Reservoir">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="https://purl.org/variablereconciliationontology#hasLatitude"/>
+                        <owl:someValuesFrom>
+                            <rdfs:Datatype>
+                                <owl:onDatatype rdf:resource="http://www.w3.org/2001/XMLSchema#double"/>
+                                <owl:withRestrictions rdf:parseType="Collection">
+                                    <rdf:Description>
+                                        <xsd:minInclusive rdf:datatype="http://www.w3.org/2001/XMLSchema#double">32.88617</xsd:minInclusive>
+                                    </rdf:Description>
+                                    <rdf:Description>
+                                        <xsd:maxInclusive rdf:datatype="http://www.w3.org/2001/XMLSchema#double">33.01667</xsd:maxInclusive>
+                                    </rdf:Description>
+                                </owl:withRestrictions>
+                            </rdfs:Datatype>
+                        </owl:someValuesFrom>
+                    </owl:Restriction>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="https://purl.org/variablereconciliationontology#hasLongitude"/>
+                        <owl:someValuesFrom>
+                            <rdfs:Datatype>
+                                <owl:onDatatype rdf:resource="http://www.w3.org/2001/XMLSchema#double"/>
+                                <owl:withRestrictions rdf:parseType="Collection">
+                                    <rdf:Description>
+                                        <xsd:minInclusive rdf:datatype="http://www.w3.org/2001/XMLSchema#double">-107.32681</xsd:minInclusive>
+                                    </rdf:Description>
+                                    <rdf:Description>
+                                        <xsd:maxInclusive rdf:datatype="http://www.w3.org/2001/XMLSchema#double">-107.27036</xsd:maxInclusive>
+                                    </rdf:Description>
+                                </owl:withRestrictions>
+                            </rdfs:Datatype>
+                        </owl:someValuesFrom>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="https://purl.org/variablereconciliationontology#New_Mexico"/>
+        <rdfs:comment>This class will contain all individuals that satisfy the given condition given their latitude and longitude.</rdfs:comment>
+        <rdfs:label>Caballo_Reservoir</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://purl.org/variablereconciliationontology#Elephant_Butte -->
+
+    <owl:Class rdf:about="https://purl.org/variablereconciliationontology#Elephant_Butte">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="https://purl.org/variablereconciliationontology#hasLatitude"/>
+                        <owl:someValuesFrom>
+                            <rdfs:Datatype>
+                                <owl:onDatatype rdf:resource="http://www.w3.org/2001/XMLSchema#double"/>
+                                <owl:withRestrictions rdf:parseType="Collection">
+                                    <rdf:Description>
+                                        <xsd:minInclusive rdf:datatype="http://www.w3.org/2001/XMLSchema#double">33.1355</xsd:minInclusive>
+                                    </rdf:Description>
+                                    <rdf:Description>
+                                        <xsd:maxInclusive rdf:datatype="http://www.w3.org/2001/XMLSchema#double">33.34708</xsd:maxInclusive>
+                                    </rdf:Description>
+                                </owl:withRestrictions>
+                            </rdfs:Datatype>
+                        </owl:someValuesFrom>
+                    </owl:Restriction>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="https://purl.org/variablereconciliationontology#hasLongitude"/>
+                        <owl:someValuesFrom>
+                            <rdfs:Datatype>
+                                <owl:onDatatype rdf:resource="http://www.w3.org/2001/XMLSchema#double"/>
+                                <owl:withRestrictions rdf:parseType="Collection">
+                                    <rdf:Description>
+                                        <xsd:minInclusive rdf:datatype="http://www.w3.org/2001/XMLSchema#double">-107.26781</xsd:minInclusive>
+                                    </rdf:Description>
+                                    <rdf:Description>
+                                        <xsd:maxInclusive rdf:datatype="http://www.w3.org/2001/XMLSchema#double">-107.13822</xsd:maxInclusive>
+                                    </rdf:Description>
+                                </owl:withRestrictions>
+                            </rdfs:Datatype>
+                        </owl:someValuesFrom>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="https://purl.org/variablereconciliationontology#New_Mexico"/>
+        <rdfs:comment>This class will contain all individuals that satisfy the given condition given their latitude and longitude.</rdfs:comment>
+        <rdfs:label>Elephant_Butte</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://purl.org/variablereconciliationontology#Equivalencies -->
+
+    <owl:Class rdf:about="https://purl.org/variablereconciliationontology#Equivalencies">
+        <rdfs:subClassOf rdf:resource="https://purl.org/variablereconciliationontology#ScientificVariable"/>
+        <rdfs:comment>This class formalizes an example of a classification of a scientific variable. It is used to show how variables can be classified.</rdfs:comment>
+        <rdfs:label>Equivalencies</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://purl.org/variablereconciliationontology#Flow -->
+
+    <owl:Class rdf:about="https://purl.org/variablereconciliationontology#Flow">
+        <rdfs:subClassOf rdf:resource="https://purl.org/variablereconciliationontology#ScientificVariable"/>
+        <rdfs:comment>This class formalizes an example of a classification of a scientific variable. It is used to show how variables can be classified.</rdfs:comment>
+        <rdfs:label>Flow</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://purl.org/variablereconciliationontology#Fort_Quitman -->
+
+    <owl:Class rdf:about="https://purl.org/variablereconciliationontology#Fort_Quitman">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="https://purl.org/variablereconciliationontology#hasLatitude"/>
+                        <owl:someValuesFrom>
+                            <rdfs:Datatype>
+                                <owl:onDatatype rdf:resource="http://www.w3.org/2001/XMLSchema#double"/>
+                                <owl:withRestrictions rdf:parseType="Collection">
+                                    <rdf:Description>
+                                        <xsd:minInclusive rdf:datatype="http://www.w3.org/2001/XMLSchema#double">31.0482</xsd:minInclusive>
+                                    </rdf:Description>
+                                    <rdf:Description>
+                                        <xsd:maxInclusive rdf:datatype="http://www.w3.org/2001/XMLSchema#double">31.0644</xsd:maxInclusive>
+                                    </rdf:Description>
+                                </owl:withRestrictions>
+                            </rdfs:Datatype>
+                        </owl:someValuesFrom>
+                    </owl:Restriction>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="https://purl.org/variablereconciliationontology#hasLongitude"/>
+                        <owl:someValuesFrom>
+                            <rdfs:Datatype>
+                                <owl:onDatatype rdf:resource="http://www.w3.org/2001/XMLSchema#double"/>
+                                <owl:withRestrictions rdf:parseType="Collection">
+                                    <rdf:Description>
+                                        <xsd:minInclusive rdf:datatype="http://www.w3.org/2001/XMLSchema#double">-105.5951</xsd:minInclusive>
+                                    </rdf:Description>
+                                    <rdf:Description>
+                                        <xsd:maxInclusive rdf:datatype="http://www.w3.org/2001/XMLSchema#double">-105.5769</xsd:maxInclusive>
+                                    </rdf:Description>
+                                </owl:withRestrictions>
+                            </rdfs:Datatype>
+                        </owl:someValuesFrom>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="https://purl.org/variablereconciliationontology#New_Mexico"/>
+        <rdfs:comment>This class will contain all individuals that satisfy the given condition given their latitude and longitude.</rdfs:comment>
+        <rdfs:label>Fort_Quitman</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://purl.org/variablereconciliationontology#NaturalFlow -->
+
+    <owl:Class rdf:about="https://purl.org/variablereconciliationontology#NaturalFlow">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:unionOf rdf:parseType="Collection">
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="https://purl.org/variablereconciliationontology#isNaturalFlow"/>
+                        <owl:hasValue>true</owl:hasValue>
+                    </owl:Restriction>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="https://purl.org/variablereconciliationontology#isRealFlow"/>
+                        <owl:hasValue>false</owl:hasValue>
+                    </owl:Restriction>
+                </owl:unionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="https://purl.org/variablereconciliationontology#Flow"/>
+    </owl:Class>
+    
+
+
+    <!-- https://purl.org/variablereconciliationontology#NaturalWaterFlow -->
+
+    <owl:Class rdf:about="https://purl.org/variablereconciliationontology#NaturalWaterFlow">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="https://purl.org/variablereconciliationontology#NaturalFlow"/>
+                    <rdf:Description rdf:about="https://purl.org/variablereconciliationontology#WaterFlow"/>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="https://purl.org/variablereconciliationontology#Equivalencies"/>
+        <rdfs:comment>This class is shown as an example of how equivalency rules can be used to describe a classification of a scientific variable. In this class, all variables (instances) that satisfy the rules specified in &quot;Equivalent To&quot; are going to get categorized as the natural flow of water.</rdfs:comment>
+        <rdfs:label>NaturalWaterFlow</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://purl.org/variablereconciliationontology#New_Mexico -->
+
+    <owl:Class rdf:about="https://purl.org/variablereconciliationontology#New_Mexico">
+        <rdfs:subClassOf rdf:resource="http://ontology.cybershare.utep.edu/ELSEWeb/elseweb-data.owl#NamedGeographicRegion"/>
+        <rdfs:comment>This class represents a named region</rdfs:comment>
+        <rdfs:label>New_Mexico</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://purl.org/variablereconciliationontology#Precipitation -->
+
+    <owl:Class rdf:about="https://purl.org/variablereconciliationontology#Precipitation">
+        <rdfs:subClassOf rdf:resource="http://ecoinformatics.org/oboe/oboe.1.2/oboe-core.owl#MeasuredCharacteristic"/>
+        <rdfs:comment>A measured characteristic of an entity that represents precipitation.</rdfs:comment>
+        <rdfs:label>Precipitation</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://purl.org/variablereconciliationontology#Range -->
+
+    <owl:Class rdf:about="https://purl.org/variablereconciliationontology#Range">
+        <owl:equivalentClass>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="https://purl.org/variablereconciliationontology#abstractRange"/>
+                <owl:someValuesFrom>
+                    <rdfs:Datatype>
+                        <owl:onDatatype rdf:resource="http://www.w3.org/2001/XMLSchema#double"/>
+                        <owl:withRestrictions rdf:parseType="Collection">
+                            <rdf:Description>
+                                <xsd:minInclusive rdf:datatype="http://www.w3.org/2001/XMLSchema#double">72.4</xsd:minInclusive>
+                            </rdf:Description>
+                            <rdf:Description>
+                                <xsd:maxInclusive rdf:datatype="http://www.w3.org/2001/XMLSchema#double">124.42</xsd:maxInclusive>
+                            </rdf:Description>
+                        </owl:withRestrictions>
+                    </rdfs:Datatype>
+                </owl:someValuesFrom>
+            </owl:Restriction>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="https://purl.org/variablereconciliationontology#Abstract"/>
+        <rdfs:comment>This class depicts an example of how variables can be classified accordingly to a specific range. The range is described in the &quot;Equivalent To&quot; property.</rdfs:comment>
+        <rdfs:label>Range</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://purl.org/variablereconciliationontology#RealFlow -->
+
+    <owl:Class rdf:about="https://purl.org/variablereconciliationontology#RealFlow">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:unionOf rdf:parseType="Collection">
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="https://purl.org/variablereconciliationontology#isNaturalFlow"/>
+                        <owl:hasValue>false</owl:hasValue>
+                    </owl:Restriction>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="https://purl.org/variablereconciliationontology#isRealFlow"/>
+                        <owl:hasValue>true</owl:hasValue>
+                    </owl:Restriction>
+                </owl:unionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="https://purl.org/variablereconciliationontology#Flow"/>
+    </owl:Class>
+    
+
+
+    <!-- https://purl.org/variablereconciliationontology#RealWaterFlow -->
+
+    <owl:Class rdf:about="https://purl.org/variablereconciliationontology#RealWaterFlow">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="https://purl.org/variablereconciliationontology#RealFlow"/>
+                    <rdf:Description rdf:about="https://purl.org/variablereconciliationontology#WaterFlow"/>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="https://purl.org/variablereconciliationontology#Equivalencies"/>
+        <rdfs:comment>This class is shown as an example of how equivalency rules can be used to describe a classification of a scientific variable. In this class, all variables (instances) that satisfy the rules specified in &quot;Equivalent To&quot; are going to get categorized as the real flow of water.</rdfs:comment>
+        <rdfs:label>RealWaterFlow</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://purl.org/variablereconciliationontology#RunOff -->
+
+    <owl:Class rdf:about="https://purl.org/variablereconciliationontology#RunOff">
+        <rdfs:subClassOf rdf:resource="http://ecoinformatics.org/oboe/oboe.1.2/oboe-core.owl#MeasuredCharacteristic"/>
+        <rdfs:comment>A measured characteristic of an entity that represents runoff</rdfs:comment>
+        <rdfs:label>RunOff</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://purl.org/variablereconciliationontology#San_Marcial -->
+
+    <owl:Class rdf:about="https://purl.org/variablereconciliationontology#San_Marcial">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="https://purl.org/variablereconciliationontology#hasLatitude"/>
+                        <owl:someValuesFrom>
+                            <rdfs:Datatype>
+                                <owl:onDatatype rdf:resource="http://www.w3.org/2001/XMLSchema#double"/>
+                                <owl:withRestrictions rdf:parseType="Collection">
+                                    <rdf:Description>
+                                        <xsd:minInclusive rdf:datatype="http://www.w3.org/2001/XMLSchema#double">33.581015</xsd:minInclusive>
+                                    </rdf:Description>
+                                    <rdf:Description>
+                                        <xsd:maxInclusive rdf:datatype="http://www.w3.org/2001/XMLSchema#double">33.751051</xsd:maxInclusive>
+                                    </rdf:Description>
+                                </owl:withRestrictions>
+                            </rdfs:Datatype>
+                        </owl:someValuesFrom>
+                    </owl:Restriction>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="https://purl.org/variablereconciliationontology#hasLongitude"/>
+                        <owl:someValuesFrom>
+                            <rdfs:Datatype>
+                                <owl:onDatatype rdf:resource="http://www.w3.org/2001/XMLSchema#double"/>
+                                <owl:withRestrictions rdf:parseType="Collection">
+                                    <rdf:Description>
+                                        <xsd:minInclusive rdf:datatype="http://www.w3.org/2001/XMLSchema#double">-107.10517</xsd:minInclusive>
+                                    </rdf:Description>
+                                    <rdf:Description>
+                                        <xsd:maxInclusive rdf:datatype="http://www.w3.org/2001/XMLSchema#double">-106.938907</xsd:maxInclusive>
+                                    </rdf:Description>
+                                </owl:withRestrictions>
+                            </rdfs:Datatype>
+                        </owl:someValuesFrom>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="https://purl.org/variablereconciliationontology#New_Mexico"/>
+        <rdfs:comment>This class will contain all individuals that satisfy the given condition given their latitude and longitude.</rdfs:comment>
+        <rdfs:label>San_Marcial</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://purl.org/variablereconciliationontology#ScientificVariable -->
+
+    <owl:Class rdf:about="https://purl.org/variablereconciliationontology#ScientificVariable">
+        <rdfs:comment>This class represents the &quot;Scientific Variable&quot; that can be represented in the ontology. This includes &quot;Water Flow&quot;, and others. Each variable has properties that represent scientific assumptions.</rdfs:comment>
+        <rdfs:label>ScientificVariable</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://purl.org/variablereconciliationontology#WaterFlow -->
+
+    <owl:Class rdf:about="https://purl.org/variablereconciliationontology#WaterFlow">
+        <rdfs:subClassOf rdf:resource="https://purl.org/variablereconciliationontology#ScientificVariable"/>
+        <rdfs:comment>This class is shown as an example of how equivalency rules can be used to describe a classification of a scientific variable. In this class all variables are classified as the flow of water in a region.</rdfs:comment>
+        <rdfs:label>WaterFlow</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://purl.org/variablereconciliationontology#WaterPrice -->
+
+    <owl:Class rdf:about="https://purl.org/variablereconciliationontology#WaterPrice">
+        <rdfs:subClassOf rdf:resource="http://ecoinformatics.org/oboe/oboe.1.2/oboe-core.owl#MeasuredCharacteristic"/>
+        <rdfs:comment>A measured characteristic of an entity that represents the price of water.</rdfs:comment>
+        <rdfs:label>WaterPrice</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Annotations
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    <rdf:Description rdf:about="https://purl.org/variablereconciliationontology#NaturalFlow">
+        <rdfs:label>NaturalFlow</rdfs:label>
+        <rdfs:comment>This class is shown as an example of how equivalency rules can be used to describe a classification of a scientific variable. In this class, all variables (instances) that satisfy the rules specified in &quot;Equivalent To&quot; are going to get categorized as the natural flow of something. Notice that this is not specific to water.</rdfs:comment>
+    </rdf:Description>
+    <rdf:Description rdf:about="https://purl.org/variablereconciliationontology#RealFlow">
+        <rdfs:comment>This class is shown as an example of how equivalency rules can be used to describe a classification of a scientific variable. In this class, all variables (instances) that satisfy the rules specified in &quot;Equivalent To&quot; are going to get categorized as the real flow of something. Notice that this is not specific to water.</rdfs:comment>
+        <rdfs:label>RealFlow</rdfs:label>
+    </rdf:Description>
+</rdf:RDF>
+
+
+
+<!-- Generated by the OWL API (version 4.5.9.2019-02-01T07:24:44Z) https://github.com/owlcs/owlapi -->
+

@@ -1,0 +1,68 @@
+{
+    "inputs": [
+        {
+            "id": "data1",
+            "type": "WaterFlow",
+            "assumptions": {
+                "isNaturalFlow": "true"
+            }
+        },
+        {
+            "id": "data2",
+            "type": "WaterFlow",
+            "assumptions": {
+                "isRealFlow": "false"
+            }
+        },
+        {
+            "id": "data3",
+            "type": "WaterFlow",
+            "assumptions": {
+                "isRealFlow": "false"
+            }
+        },
+        {
+            "id": "data4",
+            "type": "WaterFlow",
+            "_comment":"San Marcial",
+            "assumptions": {
+                "isNaturalFlow": "false",
+                "hasLatitude": "33.68511",
+                "hasLongitude": "-106.98214"
+            }
+        },
+        {
+            "id": "data5",
+            "type": "WaterFlow",
+            "_comment":"Fort Quitman",
+            "assumptions": {
+                "isNaturalFlow": "false",
+                "hasLatitude": "31.06433",
+                "hasLongitude": "-105.59508"
+            }
+        },
+        {
+            "id": "data6",
+            "type": "WaterFlow"
+        },{
+            "id": "data7",
+            "type":"abstract",
+            "_comment":"San Marcial",
+            "assumptions": {
+                "abstractRange": "73.45",
+                "hasLatitude": "33.68521",
+                "hasLongitude": "-106.98314"
+            }
+        }
+    ],
+    "outputs": [
+        {
+            "id": "e3",
+            "type": "WaterPrice"
+        },
+        {
+            "id": "e4",
+            "type": "AvocadoPrice"
+        }
+    ]
+}

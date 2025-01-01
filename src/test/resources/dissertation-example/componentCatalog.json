@@ -1,0 +1,26 @@
+{
+    "context": "Context goes here, mainly for using generic vocab as prefix",
+    "transformations": [],
+    "models": [
+        {
+            "id": "056bcb8a6a8c7d20ec316397ab70406d7112cb62b8705491bb8223a3429dbfa4",
+            "inputs": [
+                {
+                    "id": "Normalization-StreamFlowInput",
+                    "type": "WaterFlow",
+                    "assumptions": {
+                        "isRealFlow": "false"
+                    }
+                }
+            ],
+            "outputs": [
+            ],
+            "computationInfo": {
+                "method": "POST",
+                "contentType": "Content-Type:application/json",
+                "url": "http://056bcb8a6a8c7d20ec316397ab70406d7112cb62b8705491bb8223a3429dbfa4-endpoint-url.com",
+                "name": "Normalization & Downscaling - Townsend"
+            }
+        }
+    ]
+}

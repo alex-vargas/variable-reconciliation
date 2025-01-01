@@ -1,0 +1,145 @@
+{
+    "context": "Context goes here, mainly for using generic vocab as prefix",
+    "transformations": [],
+    "models": [
+        {
+            "id": "056bcb8a6a8c7d20ec316397ab70406d7112cb62b8705491bb8223a3429dbfa4",
+            "inputs": [
+                {
+                    "id": "a9612349a5c66f49ea20b1d33dafd9c1aa7bf32ad75e39aa8115600a720c2762",
+                    "type": "WaterStreamflow",
+                    "assumptions": {
+                        "isNaturalFlow": "true",
+                        "hasLatitude": "33.684820",
+                        "hasLongitude":"-106.982689"       
+                    }
+                },
+
+                {
+                    "id": "data7",
+                    "type":"abstract",
+                    "assumptions": {
+                        "abstractRange": "73.45",
+                        "hasLatitude": "33.684820",
+                        "hasLongitude":"-106.982689"  
+                    }
+                }
+            ],
+            "outputs": [
+                {
+                    "id": "91b6545e5079d8196021b5e648c7ff93226e6c2b2d85fe43001a3ac8b3721c43",
+                    "type": "WaterStreamflow",
+                    "assumptions": {
+                        "isNaturalFlow": "false",
+                        "hasLatitude": "33.684820",
+                        "hasLongitude":"-106.982689"  
+                    }
+                }
+            ],
+            "computationInfo": {
+                "method": "POST",
+                "contentType": "Content-Type:application/json",
+                "url": "http://056bcb8a6a8c7d20ec316397ab70406d7112cb62b8705491bb8223a3429dbfa4-endpoint-url.com",
+                "name": "Normalization & Downscaling - Townsend"
+            }
+        },
+        {
+            "id": "64ec4f3080f317a5a62015b2ca00a1f3d8b520fe077992b1b7465e595ab28b54",
+            "inputs": [
+                {
+                    "id": "581e6aeef4b4d8fdd9865eb065a542d3d0d1a3991dc9fb084705a26fef849f7a",
+                    "type": "ClimateHydrologyProjections"
+                }
+            ],
+            "outputs": [
+                {
+                    "id": "86dffa8ec2d54b22c394362d00abc21b7964ee6cefad6b30f56434fc0cc4a674",
+                    "type": "AverageTemperature"
+                },
+                {
+                    "id": "f294efa2268f67a5d2f6ee85a7b4e09ea3a3e4a790e9dcc90c36739d84f58da7",
+                    "type": "AveragePrecipitation"
+                }
+            ],
+            "computationInfo": {
+                "method": "POST",
+                "contentType": "Content-Type:application/json",
+                "url": "http://64ec4f3080f317a5a62015b2ca00a1f3d8b520fe077992b1b7465e595ab28b54-endpoint-url.com",
+                "name": "Averages calculation - Holmes"
+            }
+        },
+        {
+            "id": "355208e8311279694dba49d1954fa502ad776b6652d7dbd161d7b4b2a23af5d1",
+            "inputs": [
+                {
+                    "id": "abb80e211c618ea9d108102eb8b508d31ff39628bbada6b91ac9e0c7730e62e6",
+                    "type": "WaterStreamflow",
+                    "assumptions": {
+                        "isRealFlow": "true",
+                        "hasLatitude": "33.684820",
+                        "hasLongitude":"-106.982689"  
+                    }
+                },
+                {
+                    "id": "ca5a65cf5131aa269b75fef1148ea43c291867e7e57fb19f49375bb460d17716",
+                    "type": "AveragePrecipitation"
+                },
+                {
+                    "id": "1becbefad776d06aca91e6d515d98dbf04d1b6069efecc2b7df6e90b61c9dba8",
+                    "type": "AverageTemperature"
+                }
+            ],
+            "outputs": [
+                {
+                    "id": "b04b2db2262e1afa6812a783100d8b965011c059485ccb7621b4ed51f9280f39",
+                    "type": "ReleaseProjection",
+                    "_comment": "Elephant Butte Reservoir",
+                    "assumptions": {
+                    "hasLatitude": "33.22975",
+                    "hasLongitude":"-107.16856"
+                    }
+                },
+                {
+                    "id": "9b7500a7b8a35e897e7b8c3b507843781c0169e8bbc74d30fce5a41ee3727d02",
+                    "type": "ReleaseProjection",
+                    "_comment": "Caballo Reservoir",
+                    "assumptions": {
+                        "hasLatitude": "32.89942",
+                        "hasLongitude":"-107.29386"
+                    }
+                },
+                {
+                    "id": "19d431d4e7774b6e9e2c6b5b8ac58f8312a637a16c75f227f9656cf693b70146",
+                    "type": "EvaporationRate"
+                }
+            ],
+            "computationInfo": {
+                "method": "POST",
+                "contentType": "Content-Type:application/json",
+                "url": "http://355208e8311279694dba49d1954fa502ad776b6652d7dbd161d7b4b2a23af5d1-endpoint-url.com",
+                "name": "Water Balance Model - Mayer"
+            }
+        },
+        {
+            "id": "0506d097f3affeedf253089d52e99bf7631424114d53a7f52c911d579c32bebb",
+            "inputs": [
+                {
+                    "id": "41d19ad6282f203ab0fcf6c6a513de61230db6e831e0cfa18a3604c5f139a2ee",
+                    "type": "EvaporationRate"
+                }
+            ],
+            "outputs": [
+                {
+                    "id": "0cc990b01f8a3f19ae479d314c7f5663887efcd408eebd690a3541b1c0242543",
+                    "type": "WaterStocks"
+                }
+            ],
+            "computationInfo": {
+                "method": "POST",
+                "contentType": "Content-Type:application/json",
+                "url": "http://0506d097f3affeedf253089d52e99bf7631424114d53a7f52c911d579c32bebb-endpoint-url.com",
+                "name": "HydroEconomic Model - Ward"
+            }
+        }
+    ]
+}

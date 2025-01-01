@@ -1,0 +1,70 @@
+{
+    "context": "Context goes here, mainly for using generic vocab as prefix",
+    "transformations": [],
+    "models": [
+        {
+            "id": "p1",
+            "inputs": [
+                {
+                    "id": "e1p1",
+                    "type": "WaterFlow",
+                    "assumptions": {
+                        "isNaturalFlow": "false",
+                        "hasLocation": "SanMarcial"
+                    }
+                },
+                {
+                    "id": "e2p1",
+                    "type": "Temperature"
+                },
+                {
+                    "id": "e3p1",
+                    "type": "AtmosphericPressure"
+                }
+            ],
+            "outputs": [
+                {
+                    "id": "e4p1",
+                    "type": "WaterPrice"
+                },
+                {
+                    "id": "e5p1",
+                    "type": "RunOff"
+                }
+            ],
+            "computationInfo": {
+                "method": "POST",
+                "contentType": "Content-Type:application/json",
+                "url": "http://p1-endpoint-url.com"
+            }
+        },
+        {
+            "id": "p2",
+            "inputs": [
+                {
+                    "id": "e1p2",
+                    "type": "WaterFlow",
+                    "assumptions": {
+                        "isNaturalFlow": "false",
+                        "hasLocation": "SanMarcial"
+                    }
+                },
+                {
+                    "id": "e2p2",
+                    "type": "RunOff"
+                }
+            ],
+            "outputs": [
+                {
+                    "id": "e3p2",
+                    "type": "AvocadoPrice"
+                }
+            ],
+            "computationInfo": {
+                "method": "POST",
+                "contentType": "Content-Type:application/json",
+                "url": "http://p2-endpoint-url.com"
+            }
+        }
+    ]
+}
